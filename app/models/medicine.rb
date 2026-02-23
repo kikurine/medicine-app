@@ -8,8 +8,8 @@ class Medicine < ApplicationRecord
   # LINEに通知を送るメイン機能
   def send_line_notification
     # 【ここにコピーした情報を貼り付け！】
-    token = "ycYHkGJ+Z+xu7wl/yDUVO6s1j3dRicwU2oRfkxdkYB226MctWVFmdirj+jmQx5k0QEyDgRFLCO3saTqTxSJR9H29gyWjpVXJNSdxmw0CEfW1Uzz/28xmEkV3HgO2WpTOSjyyzaTMsCsUs++nXwDQOQdB04t89/1O/w1cDnyilFU="
-    user_id = "U48b8c4b05e15dd852f9f62d3c118e9be"
+    token = ENV['LINE_CHANNEL_TOKEN']
+    user_id = ENV['LINE_USER_ID']
 
     uri = URI.parse("https://api.line.me/v2/bot/message/push")
     request = Net::HTTP::Post.new(uri)
