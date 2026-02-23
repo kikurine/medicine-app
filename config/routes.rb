@@ -1,5 +1,7 @@
+# config/routes.rb
 Rails.application.routes.draw do
   root "records#index"
-# 追加：記録用のURLを作る
-  post "record_dose/:id", to: "welcome#record_dose", as: "record_dose"
+  
+  # welcome ではなく records に合わせる
+  post "record_dose/:id", to: "records#record_dose", as: "record_dose"
 end
